@@ -7,7 +7,7 @@ const (
 )
 
 // Calculate provides an age from the present time to a given time.
-func Calculate(givenTime time.Time) int64 {
+func Calculate(givenTime time.Time) int {
 	presentTime := time.Now()
 
 	switch givenLocation := givenTime.Location(); givenLocation {
@@ -17,8 +17,8 @@ func Calculate(givenTime time.Time) int64 {
 		presentTime = presentTime.In(givenLocation)
 	}
 
-	givenYear := int64(givenTime.Year())
-	presentYear := int64(presentTime.Year())
+	givenYear := givenTime.Year()
+	presentYear := presentTime.Year()
 
 	age := presentYear - givenYear
 
@@ -41,7 +41,7 @@ func Calculate(givenTime time.Time) int64 {
 	return age
 }
 
-func isLeapYear(givenYear int64) bool {
+func isLeapYear(givenYear int) bool {
 	if givenYear%400 == 0 {
 		return true
 	} else if givenYear%100 == 0 {
