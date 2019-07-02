@@ -8,7 +8,15 @@ const (
 
 // Calculate provides an age from the present time to a given time.
 func Calculate(givenTime time.Time) int64 {
-	presentTime := time.Now().UTC()
+	presentTime := time.Now()
+
+	switch givenLocation := givenTime.Location(); givenLocation {
+	case time.UTC, nil:
+		presentTime = presentTime.UTC()
+	default:
+		presentTime = presentTime.In(givenLocation)
+	}
+
 	age := int64(presentTime.Year()) - int64(givenTime.Year())
 
 	givenYearDay := givenTime.YearDay()
