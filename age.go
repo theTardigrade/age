@@ -24,15 +24,15 @@ func Calculate(givenTime time.Time) int {
 
 	age := presentYear - givenYear
 
-	givenIsLeapYear := isLeapYear(givenYear)
-	presentIsLeapYear := isLeapYear(presentYear)
+	givenYearIsLeapYear := isLeapYear(givenYear)
+	presentYearIsLeapYear := isLeapYear(presentYear)
 
 	givenYearDay := givenTime.YearDay()
 	presentYearDay := presentTime.YearDay()
 
-	if givenIsLeapYear && !presentIsLeapYear && givenYearDay >= leapYearDay {
+	if givenYearIsLeapYear && !presentYearIsLeapYear && givenYearDay >= leapYearDay {
 		givenYearDay--
-	} else if presentIsLeapYear && !givenIsLeapYear && presentYearDay >= leapYearDay {
+	} else if presentYearIsLeapYear && !givenYearIsLeapYear && presentYearDay >= leapYearDay {
 		givenYearDay++
 	}
 
