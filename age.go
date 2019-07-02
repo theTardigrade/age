@@ -17,10 +17,13 @@ func Calculate(givenTime time.Time) int64 {
 		presentTime = presentTime.In(givenLocation)
 	}
 
-	age := int64(presentTime.Year()) - int64(givenTime.Year())
+	givenYear := int64(givenTime.Year())
+	presentYear := int64(presentTime.Year())
 
-	givenIsLeapYear := isLeapYear(givenTime)
-	presentIsLeapYear := isLeapYear(presentTime)
+	age := presentYear - givenYear
+
+	givenIsLeapYear := isLeapYear(givenYear)
+	presentIsLeapYear := isLeapYear(presentYear)
 
 	givenYearDay := givenTime.YearDay()
 	presentYearDay := presentTime.YearDay()
@@ -38,14 +41,12 @@ func Calculate(givenTime time.Time) int64 {
 	return age
 }
 
-func isLeapYear(givenTime time.Time) bool {
-	year := givenTime.Year()
-
-	if year%400 == 0 {
+func isLeapYear(givenYear int64) bool {
+	if givenYear%400 == 0 {
 		return true
-	} else if year%100 == 0 {
+	} else if givenYear%100 == 0 {
 		return false
-	} else if year%4 == 0 {
+	} else if givenYear%4 == 0 {
 		return true
 	}
 
