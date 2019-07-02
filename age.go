@@ -1,6 +1,8 @@
 package age
 
-import "time"
+import (
+	"time"
+)
 
 const (
 	leapYearDay = 60
