@@ -8,7 +8,7 @@ const (
 	leapYearDay = 60
 )
 
-// Calculate provides an age from the present time to a given time.
+// Calculate provides an age from the given time to the present time.
 func Calculate(givenTime time.Time) int {
 	presentTime := time.Now()
 
