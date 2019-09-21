@@ -1,5 +1,9 @@
 # age
 
+__If you use this package, please consider donating at PayPal:__ [https://www.paypal.me/jismithpp](https://www.paypal.me/jismithpp)
+
+## Example
+
 ```golang
 package example
 
