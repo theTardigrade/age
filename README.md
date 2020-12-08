@@ -1,6 +1,10 @@
-# age
+# golang-age
 
-__If you use this package, please consider donating at PayPal:__ [https://www.paypal.me/jismithpp](https://www.paypal.me/jismithpp)
+This is a simple Golang package for determining age from a given date until the present moment. `Calculate` is the only exposed function.
+
+## Support
+
+If you use or appreciate this package in any way, please consider donating at [PayPal](https://www.paypal.me/jismithpp).
 
 ## Example
 
