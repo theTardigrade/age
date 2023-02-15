@@ -1,6 +1,6 @@
 # golang-age
 
-This is a simple Golang package for determining age from a given date until the present moment. `Calculate` is the only exposed function.
+This is a simple Go package for determining age from a given date until the present moment. `Calculate` is the only exposed function.
 
 ## Example
 
@@ -11,7 +11,7 @@ import (
 	"time"
 	"fmt"
 
-	"github.com/theTardigrade/age"
+	age "github.com/theTardigrade/golang-age"
 )
 
 func main() {
