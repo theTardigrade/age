@@ -7,7 +7,7 @@ This is a simple Go package for determining age. `Calculate` is the main exposed
 ## Example
 
 ```golang
-package example
+package main
 
 import (
 	"time"
@@ -23,6 +23,10 @@ func main() {
 	dateAge := age.Calculate(date)
 
 	fmt.Println(dateAge)
+
+	wasLeapYear := age.IsLeapYear(year)
+
+	fmt.Println(wasLeapYear) // true
 }
 ```
 
