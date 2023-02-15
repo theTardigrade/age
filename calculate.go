@@ -4,11 +4,8 @@ import (
 	"time"
 )
 
-const (
-	leapYearDay = 60
-)
-
-// Calculate provides an age from the given time to the present time.
+// Calculate returns an integer-value age based on the duration
+// between the given time to the present time.
 func Calculate(givenTime time.Time) int {
 	presentTime := time.Now()
 
@@ -24,8 +21,8 @@ func Calculate(givenTime time.Time) int {
 
 	age := presentYear - givenYear
 
-	givenYearIsLeapYear := isLeapYear(givenYear)
-	presentYearIsLeapYear := isLeapYear(presentYear)
+	givenYearIsLeapYear := IsLeapYear(givenYear)
+	presentYearIsLeapYear := IsLeapYear(presentYear)
 
 	givenYearDay := givenTime.YearDay()
 	presentYearDay := presentTime.YearDay()
@@ -41,16 +38,4 @@ func Calculate(givenTime time.Time) int {
 	}
 
 	return age
-}
-
-func isLeapYear(givenYear int) bool {
-	if givenYear%400 == 0 {
-		return true
-	} else if givenYear%100 == 0 {
-		return false
-	} else if givenYear%4 == 0 {
-		return true
-	}
-
-	return false
 }
