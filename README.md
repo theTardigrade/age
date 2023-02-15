@@ -1,6 +1,6 @@
 # golang-age
 
-This is a simple Go package for determining age. `Calculate` is the main exposed function, which calculates an based on the duration between a given date and the present moment, but `IsLeapYear` can also be called to determine whether a given year contains a leap day or not. 
+This is a simple Go package for determining age. `Calculate` is the main exposed function, which determines an age based on the duration between a given date and the present moment, but `IsLeapYear` can also be called to determine whether a given year contains a leap day or not. 
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/theTardigrade/golang-age.svg)](https://pkg.go.dev/github.com/theTardigrade/golang-age) [![Go Report Card](https://goreportcard.com/badge/github.com/thetardigrade/golang-age)](https://goreportcard.com/report/github.com/thetardigrade/golang-age)
 
