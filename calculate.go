@@ -2,6 +2,12 @@ package age
 
 import (
 	"time"
+
+	leapYear "github.com/theTardigrade/golang-leapYear"
+)
+
+const (
+	calculateLeapYearDay = 60
 )
 
 func calculate(startTime, endTime time.Time) int {
@@ -10,15 +16,15 @@ func calculate(startTime, endTime time.Time) int {
 
 	age := endYear - startYear
 
-	startYearIsLeapYear := IsLeapYear(startYear)
-	endYearIsLeapYear := IsLeapYear(endYear)
+	startYearIsLeapYear := leapYear.Is(startYear)
+	endYearIsLeapYear := leapYear.Is(endYear)
 
 	startYearDay := startTime.YearDay()
 	endYearDay := endTime.YearDay()
 
-	if startYearIsLeapYear && !endYearIsLeapYear && startYearDay >= leapYearDay {
+	if startYearIsLeapYear && !endYearIsLeapYear && startYearDay >= calculateLeapYearDay {
 		startYearDay--
-	} else if endYearIsLeapYear && !startYearIsLeapYear && endYearDay >= leapYearDay {
+	} else if endYearIsLeapYear && !startYearIsLeapYear && endYearDay >= calculateLeapYearDay {
 		startYearDay++
 	}
 

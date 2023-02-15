@@ -2,9 +2,7 @@
 
 This is a simple Go package for determining age.
 
-The most important public function is `CalculateToNow`, which determines an age based on the duration between a given date and the present moment. There is also a more general function named `Calculate`, which determines an age based on the duration between any two given dates.
-
-Finally, a helper function named `IsLeapYear` is also available to determine whether a given year contains a leap day or not. 
+The most useful public function is `CalculateToNow`, which determines an age based on the duration between a given date and the present moment. There is also a more general function named `Calculate`, which determines an age based on the duration between any two given dates.
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/theTardigrade/golang-age.svg)](https://pkg.go.dev/github.com/theTardigrade/golang-age) [![Go Report Card](https://goreportcard.com/badge/github.com/thetardigrade/golang-age)](https://goreportcard.com/report/github.com/thetardigrade/golang-age)
 
@@ -27,10 +25,6 @@ func main() {
 	dateAge := age.CalculateToNow(date)
 
 	fmt.Println(dateAge)
-
-	wasLeapYear := age.IsLeapYear(year)
-
-	fmt.Println(wasLeapYear) // true
 }
 ```
 
